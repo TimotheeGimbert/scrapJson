@@ -36,7 +36,7 @@ class Scraper
     return data # ARRAY of HASHES
   end
 
-  def save_in_new_json(data)
+  def save_as_json(data)
     File.open('db/scraped_data.json', 'w') do |f|
       obj = Hash.new
       data.each do |hash| # For each hash in the array data
@@ -47,13 +47,33 @@ class Scraper
     puts puts
     puts "Les données ont été scrappées et sont stockées dans un fichier json dans le directory /db"
   end
-  
+
+  def save_as_csv(data)
+    CSV.open('db/scraped_data.csv', 'w') do |csv|
+      data.each do |hash| # For each hash in the array data
+        hash.each {|k,v| csv << [k , v] } # each pair key,value is written into the csv object
+      end
+    end
+    puts puts
+    puts "Les données ont été scrappées et sont stockées dans un fichier csv dans le directory /db"
+  end
+
+
   def perform
     system('clear')
     url_95 = 'https://www.annuaire-des-mairies.com/val-d-oise.html'
     urls = scrap_dpt_urls(url_95)
     data = scrap_cities_emails(urls)
-    save_in_new_json(data)
+    puts "Type 'j' to save as json, 'c' pour csv, 'g' pour googlespreadshit"
+    choice = gets.chomp
+    case choice
+    when 'j' 
+      save_as_json(data)
+    when 'c' 
+      save_as_csv(data)
+    when 'g'
+      puts "fuck off google"
+    end
   end
 
 end
