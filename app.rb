@@ -1,8 +1,8 @@
 require 'bundler'
 Bundler.require
 
-$:.unshift File.expand_path('./..', __FILE__)
-require '/lib/app/file01'
-require '/lib/views/file01'
+$:.unshift File.expand_path('./../lib', __FILE__)
+require 'app/scraper'
+#require '/views/file01'
 
-binding.pry
+scrap = Scraper.new.perform
