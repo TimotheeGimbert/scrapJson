@@ -71,7 +71,7 @@ class Scraper
     when 'c' 
       save_as_csv(data)
     when 'g'
-      puts "fuck off google"
+      puts "sorry google, not available yet"
     end
   end
 
