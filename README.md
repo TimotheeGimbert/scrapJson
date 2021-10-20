@@ -1,5 +1,13 @@
-Ruby programs can be found in the lib/ directory, and can be load with the command ruby
-For these programms to run correctly, do not forget to make a "bundle install" to automatically load the required gems.
-The testing programms associated with lib/ content, are located in the spec/ directory and can be load with the command rspec
+The Ruby program is located at the directory root : app.rb
+It should be run by command line with 'ruby app.rb'
 
-The main program can be run with the app.rb file located at the directory root.
+In the directory lib/ you will find all classes in files.
+Under sub-directory lib/app/ you will find classes used by the main perform.
+Under sub-directory lib/views/ you will find classes for interaction with the app user.
+
+In the directory db/ you will find files relatives to data storage.
+
+In the directory spec/ you will find all testings programs.
+
+>>> Before launching the app, remember to do a 'bundle install' !!
+
