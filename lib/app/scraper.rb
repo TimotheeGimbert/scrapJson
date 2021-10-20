@@ -58,7 +58,6 @@ class Scraper
     puts "Les données ont été scrappées et sont stockées dans un fichier csv dans le directory /db"
   end
 
-
   def perform
     system('clear')
     url_95 = 'https://www.annuaire-des-mairies.com/val-d-oise.html'
